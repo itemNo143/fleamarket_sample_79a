@@ -2,20 +2,19 @@
 
 ## users テーブル
 
-| Column                | Type       | Options         |
-| --------------------- | ---------- | --------------- |
-| nickname              | string     | null: false     |
-| email                 | string     | null: false     |
-| password              | string     | null: false     |
-| password_confirmation | string     | null: false     |
-| first_name            | string     | null: false     |
-| last_name             | string     | null: false     |
-| first_name_hurigana   | string     | null: false     |
-| last_name_furigana    | string     | null: false     |
-| birthday              | date       | null: false     |
-| ~~birth_year~~        | ~~string~~ | ~~null: false~~ |
-| ~~birth_month~~       | ~~string~~ | ~~null: false~~ |
-| ~~birth_day~~         | ~~string~~ | ~~null: false~~ |
+| Column                | Type   | Options     |
+| --------------------- | ------ | ----------- |
+| nickname              | string | null: false |
+| email                 | string | null: false |
+| password              | string | null: false |
+| password_confirmation | string | null: false |
+| first_name            | string | null: false |
+| last_name             | string | null: false |
+| first_name_hurigana   | string | null: false |
+| last_name_furigana    | string | null: false |
+| birth_year            | string | null: false |
+| birth_month           | string | null: false |
+| birth_day             | string | null: false |
 
 ### Association
 
@@ -54,7 +53,6 @@
 | name                          | string     | null: false                    |
 | price                         | integer    | null: false                    |
 | description                   | text       | null: false                    |
-| stock                         | string     | null: false                    |
 | condition_id(acitve_hash)     | integer    | null: false                    |
 | shipping_cost_id(acitve_hash) | integer    | null: false                    |
 | shipping_time_id(acitve_hash) | integer    | null: false                    |
@@ -119,13 +117,10 @@
 
 ## credit_cards テーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| card_number      | integer    | null: false, unique: true      |
-| expiration_year  | integer    | null: false                    |
-| expiration_month | integer    | null: false                    |
-| security_code    | integer    | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| payjp_id | string     | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
 ### Association
 

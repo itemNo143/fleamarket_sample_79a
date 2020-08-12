@@ -1,16 +1,15 @@
 class Item < ApplicationRecord
 
   has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   belongs_to :category
-  belongs_to :brand
-  belongs_to :seller, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
+  belongs_to :buyer, class_name: 'User', optional: true, foreign_key: 'buyer_id'
 
   with_options presence: true do |admin|
-    admin.validates :name
-    admin.validates :price
-    admin.validates :description
-    admin.validates :stock
+    admin.validates :name, length: { maximum: 40 }
+    admin.validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    admin.validates :description, length: { maximum: 1000 }
     admin.validates :condition_id
     admin.validates :shipping_cost_id
     admin.validates :shipping_time_id
@@ -23,6 +22,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_cost
   belongs_to_active_hash :shipping_time
   belongs_to_active_hash :prefecture
-  delegate :name, to: :prefecture
-
+  # delegate :name, to: :prefecture
 end

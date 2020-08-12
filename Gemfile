@@ -37,6 +37,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -70,5 +73,16 @@ gem 'mini_magick'
 gem 'devise'
 gem 'jquery-rails'
 gem 'fog-aws'
-
+gem 'rails-i18n'
 gem 'active_hash'
+gem 'ancestry'
+gem 'gon'
+# PAY.JPのgem
+gem 'payjp'
+
+# 環境変数を簡単に定義できるENVファイルを対応させるgem
+gem 'dotenv-rails'
+
+# パンくずのgem
+gem "gretel"
+

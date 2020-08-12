@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      address: 住所
+      item: 商品
+    attributes:
+      user:
+        nickname: 名前
+        email: メールアドレス
+        password: パスワード
+        last_name: 性
+        first_name: 名
+        last_name_hurigana: 性カナ
+        first_name_hurigana: 名カナ
+      address:
+        destination_name: 送付先氏名
+        destination_name_hurigana: 送付先氏名カナ
+        post_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address: 番地
+        telephone_number: 電話番号
+      item: 
+        category: カテゴリー
+        name: 商品名
+        price: 価格
+        description: 商品の説明
+        condition_id: 商品の状態
+        shipping_cost_id: 配送料の負担元
+        shipping_time_id: 発送までの日数
+        prefecture_id: 発送元の地域
